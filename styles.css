@@ -9,11 +9,10 @@
 
 body {
   width: 100%;
-  height: 100vh;
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
-  padding: 10px;
+  padding: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
 }
@@ -23,19 +22,23 @@ body {
   width: 150px;
   border: 2px solid var(--color-botton); */
   /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
+  /* background-color: var(--color-paragraph); */
 }
 
 .number-container {
+  font-size: 20px;
   height: 40px;
   width: 40px;
   padding: 5px;
+  color: var(--color-botton-text);
+  background-color: var(--color-botton);
   border: 2px solid var(--color-botton);
   border-radius: var(--border-radius);
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }
