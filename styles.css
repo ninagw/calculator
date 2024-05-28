@@ -4,7 +4,7 @@
   --color-paragraph: #b8c1ec;
   --color-botton: #eebbc3;
   --color-botton-text: #232946;
-  --border-radius: 10px;
+  --border-radius: 15px;
 }
 
 body {
@@ -18,9 +18,24 @@ body {
   text-align: center;
 }
 
-.number-container {
+.calculator-container {
+  /* height: 100vh;
+  width: 150px;
+  border: 2px solid var(--color-botton); */
   /* flex-direction: column; */
   /* align-items: center; */
+  /* justify-content: center; */
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.number-container {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border: 2px solid var(--color-botton);
+  border-radius: var(--border-radius);
+  justify-content: center;
+  align-items: center;
 }
