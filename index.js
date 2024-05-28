@@ -8,6 +8,10 @@ const number7 = document.querySelector('[data-js="number7"]');
 const number8 = document.querySelector('[data-js="number8"]');
 const number9 = document.querySelector('[data-js="number9"]');
 
+function add(num1, num2) {
+  return num1 + num2;
+}
+
 const numbersOfCalculator =
   document.querySelectorAll(".number-container").length;
 
