@@ -7,21 +7,30 @@ const number6 = document.querySelector('[data-js="number6"]');
 const number7 = document.querySelector('[data-js="number7"]');
 const number8 = document.querySelector('[data-js="number8"]');
 const number9 = document.querySelector('[data-js="number9"]');
+const addOperator = document.querySelector('[data-js="add"]');
+
+number1.addEventListener("click", function () {
+  return console.log("1");
+});
+
+number2.addEventListener("click", function () {
+  return console.log("2");
+});
 
 function add(num1, num2) {
   return num1 + num2;
 }
 
-const numbersOfCalculator =
-  document.querySelectorAll(".number-container").length;
+// const numbersOfCalculator =
+//   document.querySelectorAll(".number-container").length;
 
-for (let i = 0; i < numbersOfCalculator; i++) {
-  document
-    .querySelectorAll(".number-container")
-    [i].addEventListener("click", function () {
-      alert("I got clicked!");
-    });
-}
+// for (let i = 0; i < numbersOfCalculator; i++) {
+//   document
+//     .querySelectorAll(".number-container")
+//     [i].addEventListener("click", function () {
+//       alert("I got clicked!");
+//     });
+// }
 
 function calculator(num1, num2, operator) {
   return operator(num1, num2);
