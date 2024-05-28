@@ -1,7 +1,6 @@
 :root {
   --color-background: #232946;
-  --color-headline: #fffffe;
-
+  --color-text: #fffffe;
   --color-paragraph: #b8c1ec;
   --color-botton: #eebbc3;
   --color-botton-text: #232946;
@@ -11,8 +10,17 @@
 body {
   width: 100%;
   height: 100vh;
+  color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.number-container {
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  flex-wrap: wrap;
 }
