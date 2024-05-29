@@ -1,14 +1,21 @@
 // const calculator = document.querySelector(‘.calculator’);
 const keys = document.querySelector(".keys-container");
+const display = document.querySelector(".display");
 
 keys.addEventListener("click", function (event) {
   if (event.target.matches("button")) {
     const key = event.target;
     const action = key.dataset.action;
+    const keyContent = key.textContent;
+    const displayedNumber = display.textContent;
 
-    // if no action is found it must be a number key
+    // if no action is found it must be a number and shown on display:
     if (!action) {
-      console.log("number key!");
+      if (displayedNumber === "0") {
+        display.textContent = keyContent;
+      } else {
+        display.textContent = displayedNumber + keyContent;
+      }
     }
 
     if (
@@ -18,6 +25,7 @@ keys.addEventListener("click", function (event) {
       action === "divide"
     ) {
       console.log("operator key!");
+      key.classList.add("is-active");
     }
 
     if (action === "clear") {
@@ -40,7 +48,6 @@ keys.addEventListener("click", function (event) {
 // const number8 = document.querySelector('[data-js="number8"]');
 // const number9 = document.querySelector('[data-js="number9"]');
 // const addOperator = document.querySelector('[data-js="add"]');
-// const display = document.querySelector('[data-js="display"]');
 
 // // number1.addEventListener("click", function () {
 // //   return console.log("1");

@@ -42,8 +42,12 @@ body {
   padding: 5px;
   color: var(--color-botton-text);
   background-color: var(--color-botton);
-  border: 2px solid var(--color-botton);
+  /* border: 2px solid var(--color-botton); */
   border-radius: var(--border-radius);
   justify-content: center;
   align-content: center;
+}
+
+.is-active {
+  background-color: #b8c1ec;
 }
