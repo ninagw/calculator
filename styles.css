@@ -34,7 +34,8 @@ body {
 }
 
 .number-container,
-.operator-container {
+.operator-container,
+.solve-container {
   font-size: 20px;
   height: 40px;
   width: 40px;
