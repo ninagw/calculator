@@ -17,6 +17,7 @@ keys.addEventListener("click", function (event) {
       } else {
         display.textContent = displayedNumber + keyContent;
       }
+      calculator.dataset.previousKeyType = "number";
     }
 
     if (
@@ -26,18 +27,28 @@ keys.addEventListener("click", function (event) {
       action === "divide"
     ) {
       console.log("operator key!");
+
+      if (firstValue && operator && previousKeyType !== "operator") {
+        display.textContent = calculate(
+          firstInputValue,
+          secondInputValue,
+          operator
+        );
+        display.textContent = calculatedValue;
+        calculator.dataset.firstInputValue = calculatedValue; //update new calculated value as firstInputValue
+      } else {
+        calculator.dataset.firstInputValue = displayedNumber; //if there is no calculation, set the displayedNumber as firstInputValue
+      }
+
       key.classList.add("is-active");
-
-      //add attribute
-      calculator.dataset.previousKeyType = "operator";
-
-      //get first value input
-      calculator.dataset.firstValue = displayedNumber;
+      calculator.dataset.previousKeyType = "operator"; //add attribute
+      calculator.dataset.firstValue = displayedNumber; //get first value input
       calculator.dataset.operator = action;
     }
 
     if (action === "clear") {
       console.log("clear key!");
+      calculator.dataset.previousKeyType = "clear";
     }
 
     if (action === "solve") {
@@ -51,6 +62,7 @@ keys.addEventListener("click", function (event) {
         secondInputValue,
         operator
       );
+      calculator.dataset.previousKeyType = "solve";
     }
 
     // remove .is-active from all keys
@@ -65,28 +77,29 @@ function calculate(num1, num2, operator) {
 
   switch (operator) {
     case "add":
-      result = num1 + num2;
+      result = parseFloat(num1) + parseFloat(num2); //parseFloat is used to convert the string into a float (a number with decimal places)
       break;
     case "subtract":
-      result = num1 - num2;
+      result = parseFloat(num1) - parseFloat(num2);
       break;
     case "multiply":
-      result = num1 * num2;
+      result = parseFloat(num1) * parseFloat(num2);
       break;
     case "divide":
-      result = num1 / num2;
+      result = parseFloat(num1) / parseFloat(num2);
       break;
     default:
       break;
   }
+
   // if (operator === "add") {
-  //   result = n1 + n2
+  //   result = n1 + n2;
   // } else if (operator === "subtract") {
-  //   result = n1 - n2
+  //   result = n1 - n2;
   // } else if (operator === "multiply") {
-  //   result = n1 * n2
+  //   result = n1 * n2;
   // } else if (operator === "divide") {
-  //   result = n1 / n2
+  //   result = n1 / n2;
   // }
   return result;
 }
