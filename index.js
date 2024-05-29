@@ -1,4 +1,4 @@
-// const calculator = document.querySelector(‘.calculator’);
+const calculator = document.querySelector(".calculator");
 const keys = document.querySelector(".keys-container");
 const display = document.querySelector(".display");
 
@@ -8,10 +8,11 @@ keys.addEventListener("click", function (event) {
     const action = key.dataset.action;
     const keyContent = key.textContent;
     const displayedNumber = display.textContent;
+    const previousKeyType = calculator.dataset.previousKeyType;
 
     // if no action is found it must be a number and shown on display:
     if (!action) {
-      if (displayedNumber === "0") {
+      if (displayedNumber === "0" || previousKeyType === "operator") {
         display.textContent = keyContent;
       } else {
         display.textContent = displayedNumber + keyContent;
@@ -26,6 +27,13 @@ keys.addEventListener("click", function (event) {
     ) {
       console.log("operator key!");
       key.classList.add("is-active");
+
+      //add attribute
+      calculator.dataset.previousKeyType = "operator";
+
+      //get first value input
+      calculator.dataset.firstValue = displayedNumber;
+      calculator.dataset.operator = action;
     }
 
     if (action === "clear") {
@@ -34,9 +42,54 @@ keys.addEventListener("click", function (event) {
 
     if (action === "solve") {
       console.log("equal key!");
+      const firstInputValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
+      const secondInputValue = displayedNumber;
+
+      display.textContent = calculate(
+        firstInputValue,
+        secondInputValue,
+        operator
+      );
     }
+
+    // remove .is-active from all keys
+    Array.from(key.parentNode.children).forEach((k) =>
+      k.classList.remove("is-active")
+    );
   }
 });
+
+function calculate(num1, num2, operator) {
+  let result = "";
+
+  switch (operator) {
+    case "add":
+      result = num1 + num2;
+      break;
+    case "subtract":
+      result = num1 - num2;
+      break;
+    case "multiply":
+      result = num1 * num2;
+      break;
+    case "divide":
+      result = num1 / num2;
+      break;
+    default:
+      break;
+  }
+  // if (operator === "add") {
+  //   result = n1 + n2
+  // } else if (operator === "subtract") {
+  //   result = n1 - n2
+  // } else if (operator === "multiply") {
+  //   result = n1 * n2
+  // } else if (operator === "divide") {
+  //   result = n1 / n2
+  // }
+  return result;
+}
 
 // const number1 = document.querySelector('[data-js="number1"]');
 // const number2 = document.querySelector('[data-js="number2"]');

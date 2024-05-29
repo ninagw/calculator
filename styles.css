@@ -49,5 +49,5 @@ body {
 }
 
 .is-active {
-  background-color: #b8c1ec;
+  background-color: var(--color-paragraph);
 }
