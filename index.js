@@ -57,11 +57,14 @@ keys.addEventListener("click", function (event) {
       const operator = calculator.dataset.operator;
       const secondInputValue = displayedNumber;
 
-      display.textContent = calculate(
-        firstInputValue,
-        secondInputValue,
-        operator
-      );
+      //error handling: only calculate if firstInputValue is given and a number pressed
+      if (firstInputValue) {
+        display.textContent = calculate(
+          firstInputValue,
+          secondInputValue,
+          operator
+        );
+      }
       calculator.dataset.previousKeyType = "solve";
     }
 
