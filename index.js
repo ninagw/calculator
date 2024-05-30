@@ -15,7 +15,11 @@ keys.addEventListener("click", function (event) {
 
     // if no action is found it must be a number and shown on display:
     if (!action) {
-      if (displayedNumber === "0" || previousKeyType === "operator") {
+      if (
+        displayedNumber === "0" ||
+        previousKeyType === "operator" ||
+        previousKeyType === "solve"
+      ) {
         display.textContent = keyContent;
       } else {
         display.textContent = displayedNumber + keyContent;
@@ -31,8 +35,13 @@ keys.addEventListener("click", function (event) {
     ) {
       console.log("operator key!");
 
-      if (firstInputValue && operator && previousKeyType !== "operator") {
-        display.textContent = calculate(
+      if (
+        firstInputValue &&
+        operator &&
+        previousKeyType !== "operator" &&
+        previousKeyType !== "solve"
+      ) {
+        const calculatedValue = calculate(
           firstInputValue,
           secondInputValue,
           operator
@@ -45,7 +54,6 @@ keys.addEventListener("click", function (event) {
 
       key.classList.add("is-active");
       calculator.dataset.previousKeyType = "operator"; //add attribute
-      calculator.dataset.firstInputValue = displayedNumber; //get first value input
       calculator.dataset.operator = action;
     }
 
@@ -72,13 +80,20 @@ keys.addEventListener("click", function (event) {
 
       //error handling: only calculate if firstInputValue is given and a number pressed
       if (firstInputValue) {
+        if (previousKeyType === "solve") {
+          firstInputValue = displayedNumber;
+          secondInputValue = calculator.dataset.modifiedValue;
+        }
+
         display.textContent = calculate(
           firstInputValue,
           secondInputValue,
           operator
         );
       }
-      calculator.dataset.previousKeyType = "solve";
+
+      // calculator.dataset.modifiedValue = secondValue; //set modifiedValue attribute
+      // calculator.dataset.previousKeyType = "solve";
     }
 
     // remove .is-active from all keys
