@@ -9,6 +9,8 @@ keys.addEventListener("click", function (event) {
     const keyContent = key.textContent;
     const displayedNumber = display.textContent;
     const previousKeyType = calculator.dataset.previousKeyType;
+    let firstInputValue = calculator.dataset.firstInputValue;
+    const operator = calculator.dataset.operator;
 
     // if no action is found it must be a number and shown on display:
     if (!action) {
@@ -53,8 +55,8 @@ keys.addEventListener("click", function (event) {
 
     if (action === "solve") {
       console.log("equal key!");
-      const firstInputValue = calculator.dataset.firstInputValue;
-      const operator = calculator.dataset.operator;
+      // let firstInputValue = calculator.dataset.firstInputValue;
+      // const operator = calculator.dataset.operator;
       const secondInputValue = displayedNumber;
 
       //error handling: only calculate if firstInputValue is given and a number pressed
