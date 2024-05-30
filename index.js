@@ -101,7 +101,7 @@ keys.addEventListener("click", function (event) {
 
     // remove .is-active from all keys
     Array.from(key.parentNode.children).forEach((k) =>
-      k.classList.remove("is-active")
+      k.classList.toggle("is-active")
     );
   }
 });
