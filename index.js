@@ -93,6 +93,7 @@ keys.addEventListener("click", function (event) {
         );
       }
 
+      // reset state for next calculation
       calculator.dataset.firstInputValue = "0";
       calculator.dataset.operator = "";
       calculator.dataset.previousKeyType = "solve";
