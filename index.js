@@ -28,7 +28,7 @@ keys.addEventListener("click", function (event) {
     ) {
       console.log("operator key!");
 
-      if (firstValue && operator && previousKeyType !== "operator") {
+      if (firstInputValue && operator && previousKeyType !== "operator") {
         display.textContent = calculate(
           firstInputValue,
           secondInputValue,
@@ -42,7 +42,7 @@ keys.addEventListener("click", function (event) {
 
       key.classList.add("is-active");
       calculator.dataset.previousKeyType = "operator"; //add attribute
-      calculator.dataset.firstValue = displayedNumber; //get first value input
+      calculator.dataset.firstInputValue = displayedNumber; //get first value input
       calculator.dataset.operator = action;
     }
 
@@ -53,7 +53,7 @@ keys.addEventListener("click", function (event) {
 
     if (action === "solve") {
       console.log("equal key!");
-      const firstInputValue = calculator.dataset.firstValue;
+      const firstInputValue = calculator.dataset.firstInputValue;
       const operator = calculator.dataset.operator;
       const secondInputValue = displayedNumber;
 
