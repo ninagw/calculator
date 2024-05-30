@@ -43,6 +43,7 @@ body {
   color: var(--color-botton-text);
   background-color: var(--color-botton);
   /* border: 2px solid var(--color-botton); */
+  border: none;
   border-radius: var(--border-radius);
   justify-content: center;
   align-content: center;
