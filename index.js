@@ -9,7 +9,7 @@ keys.addEventListener("click", function (event) {
     const keyContent = key.textContent;
     const displayedNumber = display.textContent;
     const previousKeyType = calculator.dataset.previousKeyType;
-    let firstInputValue = calculator.dataset.firstInputValue;
+    const firstInputValue = calculator.dataset.firstInputValue;
     const operator = calculator.dataset.operator;
     const secondInputValue = displayedNumber;
 
@@ -93,8 +93,9 @@ keys.addEventListener("click", function (event) {
         );
       }
 
-      // calculator.dataset.modifiedValue = secondValue; //set modifiedValue attribute
-      // calculator.dataset.previousKeyType = "solve";
+      calculator.dataset.firstInputValue = "0";
+      calculator.dataset.operator = "";
+      calculator.dataset.previousKeyType = "solve";
     }
 
     // remove .is-active from all keys
@@ -124,15 +125,6 @@ function calculate(num1, num2, operator) {
       break;
   }
 
-  // if (operator === "add") {
-  //   result = n1 + n2;
-  // } else if (operator === "subtract") {
-  //   result = n1 - n2;
-  // } else if (operator === "multiply") {
-  //   result = n1 * n2;
-  // } else if (operator === "divide") {
-  //   result = n1 / n2;
-  // }
   return result;
 }
 
