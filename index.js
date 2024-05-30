@@ -51,6 +51,16 @@ keys.addEventListener("click", function (event) {
 
     if (action === "clear") {
       console.log("clear key!");
+
+      if (key.textContent === "AC") {
+        calculator.dataset.firstInputValue = "";
+        calculator.dataset.operator = "";
+        calculator.dataset.previousKeyType = "";
+      } else {
+        key.textContent = "AC";
+      }
+
+      display.textContent = "0";
       calculator.dataset.previousKeyType = "clear";
     }
 
