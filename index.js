@@ -62,6 +62,7 @@ keys.addEventListener("click", function (event) {
 
       if (key.textContent === "AC") {
         calculator.dataset.firstInputValue = "";
+        calculator.dataset.modifiedValue = "";
         calculator.dataset.operator = "";
         calculator.dataset.previousKeyType = "";
       } else {
