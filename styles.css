@@ -33,6 +33,14 @@ body {
   overflow: hidden;
 }
 
+main {
+  z-index: 1;
+}
+
+img {
+  z-index: 2;
+  width: 700px;
+}
 /* .background {
   
   animation-name: backgroundAnimation;
