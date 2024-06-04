@@ -18,6 +18,7 @@ body {
     var(--color-botton)
   );
   background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   /* animation: myfirst 5s linear 2s infinite alternate; */
   /* background: linear-gradient(
@@ -41,7 +42,7 @@ h1 {
   background: url("/assets/images/freepik_cloud_credit-starline.png");
   z-index: -1;
   width: 1500px;
-  height: 650px;
+  height: 100%;
   position: absolute;
   background-repeat: no-repeat;
   animation: move;
@@ -52,19 +53,19 @@ h1 {
 
 @keyframes move {
   from {
-    transform: translateX(1400px);
+    transform: translateX(1500px);
   }
   to {
     transform: translateX(-1500px);
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   .cloud1 {
     background: url("/assets/images/freepik_cloud_credit-starline.png");
     z-index: -1;
     width: 1500px;
-    height: 650px;
+    height: 100%;
     position: absolute;
     background-repeat: no-repeat;
     animation: move;
@@ -75,7 +76,7 @@ h1 {
 
   @keyframes move {
     from {
-      transform: translateX(600px);
+      transform: translateX(100px);
     }
     to {
       transform: translateX(-1500px);
