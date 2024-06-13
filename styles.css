@@ -39,9 +39,9 @@ h1 {
 }
 
 .cloud1 {
-  background: url("/assets/images/freepik_cloud_credit-starline.png");
+  background: url("/assets/images/freepik_cloud_credit-starline_640px.png");
   z-index: -1;
-  width: 1500px;
+  width: 640px;
   height: 100%;
   position: absolute;
   background-repeat: no-repeat;
@@ -54,10 +54,33 @@ h1 {
 
 @keyframes move {
   from {
-    transform: translateX(1500px);
+    transform: translateX(0px);
   }
   to {
-    transform: translateX(-1500px);
+    transform: translateX(-640px);
+  }
+}
+
+.cloud2 {
+  background: url("/assets/images/freepik_cloud_credit-starline_640px.png");
+  z-index: -1;
+  width: 640px;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: move2;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+@keyframes move2 {
+  from {
+    transform: translateX(600px);
+  }
+  to {
+    transform: translateX(-640px);
   }
 }
 
