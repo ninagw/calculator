@@ -19,7 +19,7 @@ body {
   );
   background-size: cover;
   background-repeat: no-repeat;
-  overscroll-behavior: none;
+  overflow: hidden;
   /* animation: myfirst 5s linear 2s infinite alternate; */
   /* background: linear-gradient(
       217deg,
