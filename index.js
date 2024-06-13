@@ -34,6 +34,7 @@ keys.addEventListener("click", function (event) {
       action === "divide"
     ) {
       console.log("operator key!");
+      key.classList.add("is-active");
 
       if (
         firstInputValue &&
@@ -52,7 +53,6 @@ keys.addEventListener("click", function (event) {
         calculator.dataset.firstInputValue = displayedNumber; //if there is no calculation, set the displayedNumber as firstInputValue
       }
 
-      key.classList.add("is-active");
       calculator.dataset.previousKeyType = "operator"; //add attribute
       calculator.dataset.operator = action;
     }
