@@ -113,27 +113,8 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .cloud1 {
-    /* background: url("/assets/images/freepik_cloud_credit-starline_640px.png");
-    z-index: -1;
-    width: 640px;
-    height: 100%;
-    position: absolute;
-    background-repeat: no-repeat;
-    animation: move;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
     overflow: hidden;
   }
-
-  /* @keyframes move {
-    from {
-      transform: translateX(0px);
-    }
-    to {
-      transform: translateX(-640px);
-    }
-  } */
 
   .display {
     font-size: 45px;
@@ -145,6 +126,7 @@ h1 {
     font-size: 35px;
     height: 70px;
     width: 70px;
+
     /* padding: 5px;
     margin: 5px; */
     /* color: var(--color-text);
