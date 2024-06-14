@@ -103,6 +103,10 @@ keys.addEventListener("click", function (event) {
   }
 });
 
+document.addEventListener("keydown", function () {
+  alert("Key was pressed!");
+});
+
 function calculate(num1, num2, operator) {
   let result = "";
 
